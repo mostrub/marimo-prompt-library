@@ -54,6 +54,70 @@
 - To Edit, Run `uv run marimo edit multi_language_model_ranker.py`
 - To View, Run `uv run marimo run multi_language_model_ranker.py`
 
+## 6. 🆕 CLI Integration (Claude Code & Gemini CLI)
+> Use Claude Code and Gemini CLI directly without API keys
+### Prerequisites
+- **Claude Code**: Install from [claude.ai/code](https://claude.ai/code)
+- **Gemini CLI**: Install via npm `npm install -g @genai-sdk/gemini-cli` and authenticate
+
+### CLI Prompting Notebook
+> Direct integration with Gemini CLI for quick prompting
+- No API keys needed - uses your local authentication
+- To Edit, Run `uv run marimo edit cli_prompting.py`
+- To View, Run `uv run marimo run cli_prompting.py`
+- Features:
+  - Direct Gemini CLI integration (gemini-cli, gemini-flash-cli, gemini-pro-cli)
+  - Interactive prompt testing
+  - Access to testable prompts library
+
+### Enhanced Prompt Library with CLI
+> Combines CLI models with the prompt library system
+- To Edit, Run `uv run marimo edit prompt_library_cli.py`
+- To View, Run `uv run marimo run prompt_library_cli.py`
+- Features:
+  - Use Gemini CLI models alongside API models
+  - Full prompt library with categories
+  - Dynamic placeholder substitution
+  - No API keys required for CLI models
+
+## Using Claude Code & Gemini CLI Together
+
+### Workflow Example: Iterative Prompt Development
+1. **Start with Claude Code** for complex prompt design and reasoning
+   - Use Claude Code to help design and refine your prompts
+   - Get suggestions for prompt improvements
+   - Debug prompt issues with Claude's analytical capabilities
+
+2. **Test with Gemini CLI** for rapid iteration
+   ```bash
+   # Quick test from terminal
+   gemini -p "Your prompt here"
+   
+   # Or use the Marimo notebook for interactive testing
+   uv run marimo edit cli_prompting.py
+   ```
+
+3. **Compare responses** between models
+   - Use `prompt_library_cli.py` to run the same prompt on multiple models
+   - Save successful prompts to your library for reuse
+
+### Example: Building a Code Generation Prompt
+```python
+# 1. Design with Claude Code
+# Ask: "Help me create a prompt for generating Python unit tests"
+
+# 2. Test with Gemini CLI
+# Run: gemini -p "Write a comprehensive unit test for the following Python function..."
+
+# 3. Save to prompt library
+# Add to testable_prompts/code_generation/unit_test_generator.md
+```
+
+### Best Practices
+- **Claude Code**: Best for prompt engineering, complex reasoning, and code analysis
+- **Gemini CLI**: Best for quick iterations, batch testing, and production use
+- **Together**: Use Claude to design, Gemini to test at scale
+
 ## General Usage
 > See the [Marimo Docs](https://docs.marimo.io/index.html) for general usage details
 
