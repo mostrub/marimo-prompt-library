@@ -180,3 +180,13 @@ __pycache__/
 .venv/
 
 prompt_executions/
+
+# Claude and Gemini instruction files
+CLAUDE.md
+GEMINI.md
+gemini.md
+claude.md
+
+# API keys and environment files
+.env*
+!.env.sample
